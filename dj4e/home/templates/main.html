@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}sup fam. this my site{% endblock %}
+
+
+{% block content %}
+
+<style>
+body {
+  background-color: lightblue;
+  background-image: linear-gradient(to bottom right, lightblue, MediumAquaMarine);
+}
+</style>
+
+<center>
+<h1><font face="impact" color="seagreen" size="15">MY DJ4E Projects</font><p>
+<p><i><font size="3">This is coming from a file in home/templates/main.html</font></i></p>
+<p><b><font face="impact" color="limegreen" size="100">😍</font></p>
+
+{% if user.is_authenticated %}
+<p>
+
+
+<font size="3"><a href="autos">Try Autos Crud</font></a></li>
+
+</p>
+<p><font size="2"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></font></p>
+{% else %}
+<p><font size="5"><a href="{% url 'login'%}?next={{request.path}}">Please log in</a></font></p>
+
+</center>
+
+{% endif %}
+{% endblock %}
